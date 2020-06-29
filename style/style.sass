@@ -1,0 +1,363 @@
+// Переменные
+$first-color: #333333;
+$second-color: #D99734;
+$bg: #E2E0E0;
+$font-color-lite: #E7E7E7;
+
+// Миксины
+@mixin font-style($s, $col) 
+    font-size: $s
+    color: $col
+
+// Шиблоны
+%links
+    color: $first-color
+    text-decoration: none
+%links-hover
+    color: $second-color
+//общие настройки
+body
+    font-size: 18px;
+    background-color: $bg
+
+h1
+    text-transform: uppercase 
+    font-weight: bold
+    font-size: 36px
+    margin-top: 15px
+    margin-bottom: 15px
+
+h4
+    font-size: 24px
+    font-weight: 600
+
+// Стили для шапки
+.header
+    padding: 15px 0
+    background-color: #fff
+
+.header-link
+    display: flex
+
+.register-link
+    display: flex
+    align-items: center
+    margin-left: auto
+    .register-links
+        @extend %links
+        &:hover
+            @extend %links-hover
+
+.menu-bg
+    background-color: $first-color
+
+.menu-block
+    margin: 8px 0
+    display: flex
+    justify-content: space-between
+    a
+        color: $font-color-lite
+        text-transform: uppercase
+        &:hover
+            color: $second-color
+            text-decoration: none
+.dropdown-menu
+    background-color: $second-color
+    top: 130%;
+    border-radius: 0
+.nav-item 
+    text-align: center
+
+.navbar-toggler-icon
+    fill: #fff
+
+.navbar-toggler
+    &:focus
+        outline: none
+
+.navbar
+    min-height: 72px
+
+//Стили для основной секции
+.content 
+    padding: 18px 0
+    min-height: 800px
+    height: 100%
+
+
+.main-content
+    background-color: #fff
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 15px
+
+//Стили для калькулятора
+.text-inp
+    min-width: 160px
+
+
+.calc-inp
+    padding: 10px
+    width: 100%
+    border: 1px solid #D99734
+    border-radius: 5px
+    outline: none
+    color: #494949
+    margin-top: 10px
+    margin-bottom: 10px
+.select
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background: url(../img/dropdown.png) no-repeat right center;
+    padding: 10px
+    width: 100%
+    border: 1px solid #D99734
+    border-radius: 5px
+    outline: none
+    color: #494949
+    margin-top: 10px
+    margin-bottom: 10px
+
+
+.input-title
+    font-weight: 600
+    font-size: 18px
+    padding: 10px 0
+
+.btn
+    padding: 10px 20px
+    width: 100%
+    border-radius: 0
+    background-color: $second-color
+    text-transform: uppercase
+    font-weight: 600
+    margin-bottom: 20px
+    &:hover
+        background-color: #E2AC5A
+
+.table-header
+    text-align: center
+    border-bottom: 1px solid $second-color
+    background-color: #E2AC5A
+    padding: 10px 0
+
+.person-result
+    padding: 10px 0
+    text-align: center
+    border-bottom: 1px solid $second-color
+
+.total-weight
+    font-weight: bold
+    text-transform: uppercase
+    margin-bottom: 10px
+    display: inline-block
+    font-size: 18px
+
+.delete-btn 
+    cursor: pointer;
+    display: flex;
+
+.column
+    display: flex
+    align-items: center
+    justify-content: space-around;
+
+.no-display
+    display: none
+
+// Стили для подвала
+footer
+    padding: 20px 0
+    background-color: $first-color
+    margin-top: 24px
+
+
+.footer-content
+    color: #9A9999
+    font-size: 14px
+    margin-top: 10px
+
+//Стили для главной страницы
+.container-fluid
+    padding: 0;
+//Слайдер
+.main-slider
+    opacity: .99;
+.slider-description
+    color: #fff
+    position: absolute
+    top: 20%;
+    left: 55%;
+    font-size: 24px
+    max-width: 470px
+    &-left
+        color: #fff
+        position: absolute
+        top: 20%;
+        right: 50%
+        font-size: 24px
+        max-width: 470px
+.slide-title
+    text-transform:  none
+    margin-top: 50px
+    margin-bottom: 25px
+.slide-btn
+    max-width: 260px
+.slide
+    position: relative
+    height: 650px
+    width: 100%
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+.carousel-item
+    height: 650px
+
+//Основной блок главной страницы
+.main-page-container
+    padding-top: 0
+    margin-top: -40px
+    position: relative
+.main-page-content
+    background-color: #fff
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.title
+    padding-top: 24px
+    padding-bottom: 24px
+    padding-left: 24px
+    line-height: 33px;
+    border-bottom: 1px solid #66676D;
+.title-text
+    font-size: 24px;
+    margin-bottom: 0
+.artic-title
+    &:hover
+        cursor: pointer
+.artic-itm-hor
+    padding: 50px 24px
+    .artic-title
+        margin-bottom: 14px
+        text-transform: uppercase
+        font-size: 36px
+        font-weight: bold
+    .artic-date
+        font-weight: 600
+    img
+        width: 100%
+        height: 100%
+        max-height: 300px
+        object-fit: cover
+        
+    
+.artic-img
+    overflow: hidden
+    img
+        transition: transform 1s
+    &:hover
+        img
+            cursor: pointer
+            transform: scale(1.1)
+.artic-itm-col
+    padding: 50px 24px
+    height: 100%   
+    .artic-text
+        margin-top: 35px
+    img
+        width: 100%
+        height: 100%
+        max-height: 360px
+        object-fit: cover
+    &:hover
+        img
+            cursor: pointer
+.artic-description
+    color: #66676D;
+    
+.card-link
+    @extend %links-hover
+    &:hover
+        text-decoration: underline
+        color: $first-color
+.card
+    border: none
+.mb-3
+    margin-bottom: 0 !important
+
+//Гелерея
+.galery
+    padding-top: 30px
+    padding-bottom: 30px
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    flex-flow: row wrap
+    div
+        flex: auto
+        height: auto
+        margin: 9px
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover   
+
+@media (max-width: 991.98px)  
+    .container 
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 991.98px;
+    .content
+        padding-top: 0
+    .sex
+        display: none 
+    .equipment
+        display: none
+    .strength
+        display: none
+    .slider-description
+        padding-left: 10%
+        padding-right: 10%
+        color: #fff
+        position: absolute
+        top: 30%;  
+        text-align: center
+        width: 100%
+        left: 0
+        max-width: 991px
+
+        &-left
+            padding-left: 10%
+            padding-right: 10%
+            color: #fff
+            position: absolute
+            top: 30%;
+            width: 100%
+            max-width: 991px
+            right: 0
+            text-align: center
+
+
+@media (max-width: 575.98px) 
+    .slider-description
+        padding-left: 20%
+        padding-right: 20%
+        font-size: 18px
+        h1
+            font-size: 24px
+        &-left
+            font-size: 18px
+            padding-left: 20%
+            padding-right: 20%
+            h1
+                font-size: 24px
+    .artic-itm-hor
+        flex-direction: column
+    .card
+        padding-left: 0
+        padding-right: 0
+    .galery
+        div
+            margin: 0
+
+
